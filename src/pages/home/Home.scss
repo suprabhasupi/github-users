@@ -1,6 +1,73 @@
 .homepage-wrapper {
-  background-color: red;
-  p {
-    color: blue;
+  .home {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	margin: auto;
+	flex-wrap: wrap;
   }
+  .users-wrapper {
+    cursor: pointer;
+  	width: 300px;
+  	margin: 20px;
+  	box-shadow:0 13px 16px -10px rgba(50,50,93,.25), 0 3px 6px -13px rgba(0,0,0,.3), 0 -9px 10px -9px rgba(0,0,0,.025);
+  	img {
+  		width: 100%;
+  	}
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+  }
+  .sort-wrapper {
+  	display: flex;
+    justify-content: flex-end;
+    font-size: 14px;
+    margin: 21px;
+    .label {
+		margin-right: 10px;
+    }
+    .sort {
+    padding: 0 10px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    margin-right: 10px;
+    line-height: 1.6;
+    cursor: pointer;
+    }
+  }
+  .modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+
+.modal {
+  position:fixed;
+  background: white;
+  width: 50%;
+  height: auto;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  .close {
+          position: absolute;
+    right: 15px;
+    top: 9px;
+    cursor: pointer;
+    }
+}
+.modal-info {
+      display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 32px;
+
+}
 }

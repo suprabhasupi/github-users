@@ -4,13 +4,27 @@ import './index.scss';
 import { render } from 'react-dom';
 import App from './app/App';
 import  {BrowserRouter} from 'react-router-dom';
+// import { combineReducers } from 'redux'
+import reducers from './reducers'
+import thunk from 'redux-thunk';
+import {Provider} from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
 // import Homepage from './pages/home';
 import * as serviceWorker from './serviceWorker';
+const middleware = [ thunk ];
+
+const store = createStore(
+                    reducers,
+                    applyMiddleware(...middleware));
 
 render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+	<Provider store={store}>
+	<React.Fragment>
+	  <BrowserRouter>
+	    <App />
+	  </BrowserRouter>
+	  </React.Fragment>
+  </Provider>,
   document.getElementById('root'),
 );
 
