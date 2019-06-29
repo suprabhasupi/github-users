@@ -10,11 +10,13 @@ const WaitingComponent = Component => {
 }
 
 const Homepage = React.lazy(() => import('../pages/home'));
+const Userpage = React.lazy(() => import('../pages/user'));
 
 const Router = () => {
   return (
     <Switch>
       <Route exact={true} path="/" component={WaitingComponent(Homepage)} />
+      <Route exact={true} path="/user" component={WaitingComponent(Userpage)} />
     </Switch>
   )
 }
